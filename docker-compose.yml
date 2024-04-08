@@ -44,19 +44,17 @@ services:
     depends_on:
       - redis
 
-  redis:
-    image: redis:7.0.5-alpine
-    hostname: redis
-
-  worker:
+  flower:
     build:
       context: .
-    hostname: worker
+    hostname: flower
     entrypoint: celery
-    command: -A celery_app.app worker --loglevel=info
+    command: -A celery_app.app flower --loglevel=info
     volumes:
       - ./service:/service
     links:
       - redis
     depends_on:
       - redis
+    ports:
+      - "5555:5555"
