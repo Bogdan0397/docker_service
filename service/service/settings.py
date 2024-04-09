@@ -151,4 +151,3 @@ LOGGING = {
 CELERY_BROKER_URL = 'redis://redis:6379/0'
 
 
-CELERY_BROKER_URL = 'redis://redis:6379/0'
