@@ -48,6 +48,7 @@ class Plan(models.Model):
 
         return super().save(*args,**kwargs)
 
+
 class Subscription(models.Model):
     client = models.ForeignKey(Client, related_name='subscription',on_delete=models.PROTECT)
     service = models.ForeignKey(Service, related_name='subscription', on_delete=models.PROTECT)
