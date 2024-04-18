@@ -11,4 +11,6 @@ RUN pip install -r /temp/requirements.txt
 
 RUN adduser --disabled-password service-user
 
+RUN apk add --no-cache redis #для redis_cli benchmark
+
 USER service-user
